@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="ShopingListApp">
+
+<head>
+  <meta
+<title>Custom Service</title>
+</head>
+<meta charset="utf-8">
+<script src="angular.min.js"></script>
+<script src="app.js"></script>
+<body>
+  <h1>Custom Service</h1>
+
+    <div ng-controller="ShopingListAddController as itemAdder">
+        <input type="text" ng-model="itemAdder.itemName" placeholder="Item Name">
+        <input type="text" ng-model="itemAdder.itemQuantity" placeholder="Item Quantity">
+        <button ng-click="itemAdder.addItem();">Add Item to Shopping List</button>
+  </div>
+  <div ng-controller="ShopingListShowController as showList">
+    <ol>
+    <li ng-repeat="item in showList.items">
+      {{item.quantity}} of {{item.item}}(s)
+    </li>
+  </ol>
+  </div>
+
+</div>
+
+</body>
+</html>
